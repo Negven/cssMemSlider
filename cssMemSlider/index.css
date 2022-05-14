@@ -3,12 +3,8 @@
     padding: 0;
 }
 
-a ~ p {
-    color: red;
-}
-
 .img {
-    width: 100rem;
+    width: 30rem;
     height: 20rem;
 }
 
@@ -30,4 +26,77 @@ a ~ p {
 
 .img5 {
     background: url("./img/mem-5.jpg") no-repeat;
+}
+
+section {
+    width: 30rem;
+    height: 30rem;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mem--container {
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+}
+
+.text--container {
+    display: flex;
+    width: fit-content;
+    overflow: hidden;
+}
+
+p {
+    width: 30rem;
+}
+
+#radio-img1:checked ~ .mem--container{
+    transform: translate(0);
+}
+
+#radio-img2:checked ~ .mem--container{
+
+    transform: translate(-30rem);
+}
+
+#radio-img3:checked ~ .mem--container{
+    transform: translate(-60rem);
+}
+
+#radio-img4:checked ~ .mem--container{
+    transform: translate(-90rem);
+}
+
+#radio-img5:checked ~ .mem--container{
+    transform: translate(-120rem);
+}
+
+
+
+#radio-img1:checked ~ .text--container{
+    transform: translate(0);
+}
+
+#radio-img2:checked ~ .text--container{
+
+    transform: translate(-30rem);
+}
+
+#radio-img3:checked ~ .text--container{
+    transform: translate(-60rem);
+}
+
+#radio-img4:checked ~ .text--container{
+    transform: translate(-90rem);
+}
+
+#radio-img5:checked ~ .text--container{
+    transform: translate(-120rem);
+}
+
+.text--container, .mem--container {
+    transition-property: transform;
+    transition-duration: 0.76s;
 }
