@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #383838;
+    font-family: sans-serif;
+}
+
+.img {
+    width: 30rem;
+    height: 20rem;
+}
+
+.img1 {
+    background: url("./img/mem-1.png") no-repeat;
+    background-size: 100%;
+}
+
+.img2 {
+    background: url("./img/mem-2.png") no-repeat;
+    background-size: 100%;
+}
+
+.img3 {
+    background: url("./img/mem-3.png") no-repeat;
+    background-size: 100%;
+}
+
+.img4 {
+    background: url("./img/mem-4.png") no-repeat;
+    background-size: 100%;
+}
+
+.img5 {
+    background: url("./img/mem-5.png") no-repeat;
+    background-size: 100%;
+}
+
+section {
+    max-width: 30rem;
+    height: 23rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 10fr 1fr;
+    grid-template-columns: 15fr repeat(5, 1fr);
+    grid-auto-flow: column;
+    background: #262626;
+    color: #FAFAFA;
+}
+
+.main--container {
+    background: #262626;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.mem--container {
+    width: fit-content;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    order: 1;
+    overflow: hidden;
+}
+
+.text--container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: fit-content;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    order: 2;
+    overflow: hidden;
+}
+
+input, label {
+    order: 2;
+    z-index: 10;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+input[type = "radio" i] {
+    display: none;
+}
+
+label {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+span {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 25%;
+    background: #FFA500;
+    border-radius: 50%;
+    border: 3px solid #FFA500;
+    transition-property: background, border;
+    transition-duration: 0.2s;
+}
+
+label:hover span {
+    background: #ffd6b0 !important;
+    border: 3px solid #ffd6b0;
+
+}
+
+label:active span {
+    background: #7a4d32 !important;
+    border: 3px solid #7a4d32;
+
+}
+
+#radio-img1:checked ~ label[for = "radio-img1"] span,
+#radio-img2:checked ~ label[for = "radio-img2"] span,
+#radio-img3:checked ~ label[for = "radio-img3"] span,
+#radio-img4:checked ~ label[for = "radio-img4"] span,
+#radio-img5:checked ~ label[for = "radio-img5"] span
+{
+    background: #262626;
+    border: 3px solid #FFA500 !important;
+
+}
+
+label[for = "radio-img1"] {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+label[for = "radio-img2"] {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+label[for = "radio-img3"] {
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+label[for = "radio-img4"] {
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+label[for = "radio-img5"] {
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
+p {
+    color: #262626;
+    width: 30rem;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+#radio-img1:checked ~ .mem--container{
+    transform: translate(0);
+}
+
+#radio-img2:checked ~ .mem--container{
+    transform: translate(-30rem);
+}
+
+#radio-img3:checked ~ .mem--container{
+    transform: translate(-60rem);
+}
+
+#radio-img4:checked ~ .mem--container{
+    transform: translate(-90rem);
+}
+
+#radio-img5:checked ~ .mem--container{
+    transform: translate(-120rem);
+}
+
+#radio-img1:checked ~ .text--container #text--img1,
+#radio-img2:checked ~ .text--container #text--img2,
+#radio-img3:checked ~ .text--container #text--img3,
+#radio-img4:checked ~ .text--container #text--img4,
+#radio-img5:checked ~ .text--container #text--img5
+{
+    color: #fafafa;
+}
+
+#radio-img1:checked ~ .text--container{
+    transform: translate(-120rem);
+}
+
+#radio-img2:checked ~ .text--container{
+    transform: translate(-90rem);
+}
+
+#radio-img3:checked ~ .text--container{
+    transform: translate(-60rem);
+}
+
+#radio-img4:checked ~ .text--container{
+    transform: translate(-30rem);
+}
+
+#radio-img5:checked ~ .text--container{
+    transform: translate(0rem);
+}
+
+.text--container, .mem--container {
+    transition-property: transform;
+    transition-duration: 0.76s;
+}
+
+
+@media all and (max-width: 641px) {
+    section {
+        height: 26rem;
+        grid-template-rows: 11fr 1fr 1fr;
+        grid-template-columns: 3fr repeat(5, 1fr) 3fr;
+        grid-row-gap: 0.5rem;
+    }
+
+    .text--container {
+        grid-row-start: 3;
+    }
+
+}
